@@ -1,0 +1,603 @@
+:root {
+    --primary-color: #00ff9d;
+    --secondary-color: #00b7ff;
+    --background-color: #000;
+    --text-color: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Header Styles */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: -60px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+.nav-container {
+    max-width: 100%;
+    margin: -30px auto;
+    padding: 0 4rem;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    flex: 0 0 auto;
+    padding: 1rem 0;
+}
+
+.logo h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.nav-right {
+    flex: 1;
+    margin-left: 4rem;
+    float: left;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 0.5rem;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: flex-end;
+    /* Changed from space-between */
+    align-items: center;
+    list-style: none;
+    gap: 4rem;
+    /* Added consistent gap between links */
+}
+
+.nav-links li {
+    margin: 0;
+    /* Removed margin-left since we're using gap */
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 2rem;
+    /* Adjusted from 2rem for better proportion */
+    transition: color 0.3s ease;
+    padding: 12px 24px;
+    /* Increased padding for better clickable area */
+    display: inline-block;
+    /* Added to make padding work properly */
+    position: relative;
+    /* For hover effect */
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Optional: Add an underline hover effect */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 70%;
+}
+
+.cta-button a {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 12px 24px;
+    /* Matched padding with other links */
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    width: 250px;
+}
+
+.cta-button a:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Clear fix for header */
+.nav-container::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.main-title {
+    font-size: 7.8rem;
+    text-transform: uppercase;
+    margin-bottom: 4rem;
+    margin-top: 8rem;
+    /* Added to account for fixed header */
+}
+
+.main-title span {
+    display: flex;
+    width: 1500px;
+    position: relative;
+    top: 65px;
+}
+
+.main-title-2 {
+    font-size: 7.8rem;
+    text-transform: uppercase;
+    margin-bottom: 4rem;
+    margin-top: -8rem;
+    /* Added to account for fixed header */
+}
+
+.main-title-2 span {
+    display: flex;
+    width: 1500px;
+    position: relative;
+    top: -310px;
+}
+
+.main-title-3 span {
+    display: flex;
+    width: 1500px;
+    position: relative;
+    top: -745px;
+}
+
+.main-title-3 {
+    font-size: 7.8rem;
+    text-transform: uppercase;
+    margin-bottom: 4rem;
+    margin-top: -8rem;
+    /* Added to account for fixed header */
+}
+
+/* Rest of the existing CSS remains the same */
+
+/* Hero Section */
+.hero {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.hero-title {
+    font-size: 4.5rem;
+    text-transform: uppercase;
+    line-height: 1.2;
+    z-index: 2;
+}
+
+.hero-graphic-1 {
+    position: relative;
+    right: 450px;
+    top: 50%;
+    transform: translateY(-60%);
+    /* transform: translateX(-180%); */
+    width: 50%;
+    z-index: 1;
+}
+
+.placeholder-image-1 {
+    display: flex;
+}
+
+.placeholder-image-1 img {
+    float: left;
+    width: 90%;
+}
+
+.hero-graphic-2 {
+    position: relative;
+    right: -870px;
+    top: 50%;
+    transform: translateY(-160%);
+    /* transform: translateX(-180%); */
+    width: 50%;
+    z-index: 1;
+}
+
+.placeholder-image-2 {
+    display: flex;
+}
+
+.placeholder-image-2 img {
+    float: left;
+    width: 90%;
+}
+
+.hero-graphic-3 {
+    position: relative;
+    right: -120px;
+    top: 50%;
+    transform: translateY(-220%);
+    /* transform: translateX(-180%); */
+    width: 50%;
+    z-index: 1;
+}
+
+.placeholder-image-3 {
+    display: flex;
+}
+
+.placeholder-image-3 img {
+    float: left;
+    width: 90%;
+}
+
+/* Disc-container */
+
+.disc-container {
+    /* display: flex; */
+    position: relative;
+    top: -1130px;
+    text-align: left;
+    width: 1200px;
+}
+
+.desc p {
+    align-items: center;
+    margin-left: 200px;
+    font-size: 2rem;
+}
+
+/* Learn */
+
+.learn-container {
+    position: relative;
+    display: flex;
+    top: -1010px;
+    align-items: center;
+    width: 1500px;
+}
+
+.learn-container span {
+    align-items: center;
+    font-size: 10rem;
+}
+
+/* Image container */
+
+.image-container {
+    position: relative;
+    display: flex;
+    top: -1020px;
+    /* width: 1000px; */
+}
+
+.image-container img {
+    max-width: 150%;
+    position: relative;
+    left: -260px;
+}
+
+/* Side Text */
+
+.side1{
+    display: flex;
+    position: relative;
+    top: -2400px;
+    font-size: 3rem;
+    left: -20px;
+}
+
+.side2{
+    display: flex;
+    position: relative;
+    top: -2350px;
+    font-size: 3rem;
+    left: 824px;
+    width: 475px;
+}
+
+.side3{
+    display: flex;
+    position: relative;
+    top: -2250px;
+    font-size: 3rem;
+    left: -20px;
+}
+
+.side4{
+    display: flex;
+    position: relative;
+    top: -2150px;
+    font-size: 3rem;
+    left: 700px;
+    width: 575px;
+}
+
+/* Speakers Section */
+
+.speaker {
+    display: flex;
+    position: relative;
+    top: -2100px;
+    font-size: 9rem;
+}
+
+.speakers {
+    margin-bottom: 4rem;
+    display: flex;
+    position: relative;
+    top: -2000px;
+}
+
+.speakers h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.speaker-grid {
+    position: relative;
+    display: flex;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 5rem;
+    left: -280px;
+}
+
+.speaker-card {
+    background: rgb(0, 0, 0);
+    border-color: white;
+    border: 2px;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 800px;
+    font-size: 1.5rem;
+}
+
+.speaker-grid2{
+    position: relative;
+    display: flex;
+    left: -1960px;
+    top: 1136px;
+}
+
+.speaker-card1 {
+    /* position: relative; */
+    background: rgb(0, 0, 0);
+    padding: 2rem;
+    border-radius: 10px;
+    border-color: white;
+    width: 800px;
+    /* left: -1960px; */
+    font-size: 1.5rem;
+    /* top: 1168px; */
+}   
+
+.speaker-image1 img {
+    width: 200px;
+    height: 200px;
+    background: #333;
+    border-radius: 50%;
+    margin-bottom: -3rem;
+}
+
+.speaker-card1 h3 {
+    margin-bottom: -4rem;
+    position: relative;
+    left: 240px;
+    top: -111px;
+    width: 212px;
+}
+
+.speaker-image img {
+    width: 200px;
+    height: 200px;
+    background: #333;
+    border-radius: 50%;
+    margin-bottom: -6rem;
+}
+
+.speaker-card h3 {
+    margin-bottom: -4rem;
+    position: relative;
+    left: 240px;
+    top: -111px;
+    width: 212px;
+}
+
+.learn-more {
+    display: flex;
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 2rem;
+}
+
+.learn-more:hover {
+    background: var(--primary-color);
+    color: var(--background-color);
+}
+
+/* Last Stage */
+
+.last-stage{
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    top: -1800px;
+}
+
+.stage1{
+    position: relative;
+    display: flex;
+    font-size: 4rem;
+    left: -300px;
+    width: 700px;
+}
+
+.stage2{
+    position: relative;
+    display: flex;
+    font-size: 2rem;
+    width: 600px;
+    left: -60px;
+}
+
+.stage2 p{
+    width: 600px;
+}
+
+.stage3{
+    position: relative;
+    display: flex;
+    font-size: 2rem;
+    width: 555px;
+    left: 246px;
+}
+
+.stage3 p {
+    width: 300px;
+}
+
+/* Image animation */
+
+.img1,
+.img2,
+.img3 {
+  transition: transform 0.5s ease;
+}
+
+.img1.animate {
+  transform: translateY(200px);
+}
+
+.img2.animate {
+  transform: translateY(-90px);
+}
+
+.img3.animate {
+  transform: translateY(-150px);
+}
+
+
+/* Images */
+
+.img1{
+    display: flex;
+    position: relative;
+    top: -3090px;
+    width: 200px;
+    left: 322px;
+}
+
+
+.img2{
+    display: flex;
+    position: relative;
+    top: -2790px;
+    width: 300px;
+    left: -400px;
+}
+
+.img3{
+    display: flex;
+    position: relative;
+    top: -2974px;
+    width: 400px;
+    left: 1000px;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        padding: 0 2rem;
+    }
+
+    .nav-right {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 2rem;
+        /* Reduced gap for mobile */
+    }
+
+    .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .contact-info {
+        margin-right: 0;
+    }
+
+    .contact-info span {
+        display: block;
+        margin-left: 0;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .nav-links li {
+        margin-left: 0;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-graphic {
+        position: relative;
+        width: 100%;
+        margin-top: 2rem;
+    }
+
+    .cta {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cta-content {
+        padding-right: 0;
+        margin-bottom: 2rem;
+    }
+}
